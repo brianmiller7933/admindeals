@@ -1,9 +1,181 @@
 ---
-const domain = "AdminDeals.com";
+export const prerender = false;
+
+type Category = "sports" | "entertainment" | "legacy" | "technology" | "health" | "business" | "brand";
+
+type SiteConfig = {
+	domain: string;
+	category: Category;
+	description: string;
+	uses: string[];
+	personal?: boolean;
+};
+
+const sites: Record<string, SiteConfig> = {
+	"admindeals.com": {
+		domain: "AdminDeals.com",
+		category: "business",
+		description: "A memorable .com domain with strong potential for business services, software, procurement, or a B2B marketplace.",
+		uses: ["Business services", "B2B software", "Deals marketplace"],
+	},
+	"jasoncrowejunior.com": {
+		domain: "JasonCroweJunior.com",
+		category: "sports",
+		description: "A direct, memorable digital address suited to a basketball-focused brand, media destination, or future online venture.",
+		uses: ["Athlete brand", "Sports media", "Digital platform"],
+		personal: true,
+	},
+	"jahkeemstewart.com": {
+		domain: "JahkeemStewart.com",
+		category: "sports",
+		description: "A distinctive .com address suited to a football-focused brand, media destination, or future online venture.",
+		uses: ["Athlete brand", "Football media", "Digital platform"],
+		personal: true,
+	},
+	"bodhiraebreathnach.com": {
+		domain: "BodhiRaeBreathnach.com",
+		category: "entertainment",
+		description: "A polished personal-name domain suited to an entertainment portfolio, media presence, or future creative venture.",
+		uses: ["Creative portfolio", "Entertainment media", "Personal brand"],
+		personal: true,
+	},
+	"emmanuelbesnier.com": {
+		domain: "EmmanuelBesnier.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"jeanlouisvandervelde.com": {
+		domain: "JeanLouisVanDerVelde.com",
+		category: "technology",
+		description: "A distinctive personal-name domain suited to a technology profile, financial-media resource, or future digital venture.",
+		uses: ["Technology profile", "Financial media", "Digital venture"],
+		personal: true,
+	},
+	"maximtebar.com": {
+		domain: "MaximTebar.com",
+		category: "legacy",
+		description: "A concise personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"miltiadismarinakis.com": {
+		domain: "MiltiadisMarinakis.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"prajogopangestu.com": {
+		domain: "PrajogoPangestu.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, business-media resource, or future digital venture.",
+		uses: ["Professional profile", "Business media", "Digital venture"],
+		personal: true,
+	},
+	"susanneklatten.com": {
+		domain: "SusanneKlatten.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, business-media resource, or future digital venture.",
+		uses: ["Professional profile", "Business media", "Digital venture"],
+		personal: true,
+	},
+	"thomasfrist.com": {
+		domain: "ThomasFrist.com",
+		category: "legacy",
+		description: "A strong personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"thomasfristiii.com": {
+		domain: "ThomasFristIII.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"vagitalekperov.com": {
+		domain: "VagitAlekperov.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, business-media resource, or future digital venture.",
+		uses: ["Professional profile", "Business media", "Digital venture"],
+		personal: true,
+	},
+	"yusufalekperov.com": {
+		domain: "YusufAlekperov.com",
+		category: "legacy",
+		description: "A distinctive personal-name domain suited to a professional profile, editorial resource, or future digital venture.",
+		uses: ["Professional profile", "Editorial resource", "Digital venture"],
+		personal: true,
+	},
+	"andyvonbechtolsheim.com": {
+		domain: "AndyVonBechtolsheim.com",
+		category: "technology",
+		description: "A distinctive personal-name domain suited to a technology profile, innovation resource, or future digital venture.",
+		uses: ["Technology profile", "Innovation media", "Digital venture"],
+		personal: true,
+	},
+	"rapamycinonline.com": {
+		domain: "RapamycinOnline.com",
+		category: "health",
+		description: "A clear, descriptive domain suited to an informational resource or appropriately licensed health-services platform.",
+		uses: ["Educational resource", "Health technology", "Licensed services"],
+	},
+	"fastglp1.com": {
+		domain: "FastGLP1.com",
+		category: "health",
+		description: "A concise, memorable domain suited to an informational resource or appropriately licensed health-services platform.",
+		uses: ["Educational resource", "Health technology", "Licensed services"],
+	},
+	"rapamycindirect.com": {
+		domain: "RapamycinDirect.com",
+		category: "health",
+		description: "A direct, memorable domain suited to an informational resource or appropriately licensed health-services platform.",
+		uses: ["Educational resource", "Health technology", "Licensed services"],
+	},
+	"refillglp1.com": {
+		domain: "RefillGLP1.com",
+		category: "health",
+		description: "A highly specific domain suited to an informational resource or appropriately licensed health-services platform.",
+		uses: ["Educational resource", "Health technology", "Licensed services"],
+	},
+	"microdosedirect.com": {
+		domain: "MicrodoseDirect.com",
+		category: "health",
+		description: "A memorable domain suited to a responsible educational resource or appropriately licensed wellness platform.",
+		uses: ["Educational resource", "Wellness technology", "Licensed services"],
+	},
+	"tannyl.com": {
+		domain: "Tannyl.com",
+		category: "brand",
+		description: "A short, distinctive, and highly brandable .com domain ready for an original idea, product, or company.",
+		uses: ["Consumer brand", "Digital product", "New venture"],
+	},
+	"dividendtime.com": {
+		domain: "DividendTime.com",
+		category: "business",
+		description: "A memorable finance-oriented domain suited to an educational publication, analytics product, or investor community.",
+		uses: ["Finance education", "Analytics product", "Investor media"],
+	},
+};
+
+const host = Astro.url.hostname.toLowerCase().replace(/^www\./, "");
+const site = sites[host] ?? sites["admindeals.com"];
 const email = "bmiller7933@gmail.com";
 const phoneDisplay = "917-809-5345";
 const phoneHref = "+19178095345";
-const subject = encodeURIComponent("Offer for AdminDeals.com");
+const subject = encodeURIComponent(`Inquiry regarding ${site.domain}`);
+const palette: Record<Category, { accent: string; accent2: string; glow: string }> = {
+	sports: { accent: "#38bdf8", accent2: "#2563eb", glow: "56, 189, 248" },
+	entertainment: { accent: "#fb7185", accent2: "#a855f7", glow: "251, 113, 133" },
+	legacy: { accent: "#f5c76b", accent2: "#c08457", glow: "245, 199, 107" },
+	technology: { accent: "#2dd4bf", accent2: "#3b82f6", glow: "45, 212, 191" },
+	health: { accent: "#a78bfa", accent2: "#22d3ee", glow: "167, 139, 250" },
+	business: { accent: "#60a5fa", accent2: "#818cf8", glow: "96, 165, 250" },
+	brand: { accent: "#fbbf24", accent2: "#f97316", glow: "251, 191, 36" },
+};
+const colors = palette[site.category];
 ---
 
 <!doctype html>
@@ -11,40 +183,40 @@ const subject = encodeURIComponent("Offer for AdminDeals.com");
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<title>AdminDeals.com | Premium Domain for Sale</title>
-
-		<meta
-			name="description"
-			content="AdminDeals.com is a premium, memorable domain available for acquisition."
-		/>
-
-		<style>
-			* {
-				box-sizing: border-box;
-			}
-
-			html {
-				scroll-behavior: smooth;
-			}
-
+		<title>{site.domain} | Domain Available</title>
+		<meta name="description" content={`${site.domain} is available for acquisition.`} />
+		<style define:vars={{ accent: colors.accent, accent2: colors.accent2, glow: colors.glow }}>
+			* { box-sizing: border-box; }
+			html { scroll-behavior: smooth; }
 			body {
 				margin: 0;
-				font-family:
-					Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-					"Segoe UI", sans-serif;
-				background:
-					radial-gradient(circle at top, #172554 0%, #0f172a 40%, #020617 100%);
+				min-height: 100vh;
+				font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				background: #060914;
 				color: #f8fafc;
-				min-height: 100vh;
 			}
-
-			.page {
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
+			body::before {
+				content: "";
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				background:
+					radial-gradient(circle at 15% 12%, rgba(var(--glow), .18), transparent 32%),
+					radial-gradient(circle at 85% 78%, rgba(var(--glow), .10), transparent 28%),
+					linear-gradient(135deg, #080d1e 0%, #060914 55%, #0a1022 100%);
+				z-index: -2;
 			}
-
+			body::after {
+				content: "";
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+				background-size: 48px 48px;
+				mask-image: linear-gradient(to bottom, black, transparent 80%);
+				z-index: -1;
+			}
+			.page { min-height: 100vh; display: flex; flex-direction: column; }
 			header {
 				width: min(1120px, calc(100% - 48px));
 				margin: 0 auto;
@@ -53,336 +225,135 @@ const subject = encodeURIComponent("Offer for AdminDeals.com");
 				align-items: center;
 				justify-content: space-between;
 			}
-
-			.logo {
-				font-size: 21px;
-				font-weight: 800;
-				letter-spacing: -0.03em;
-			}
-
-			.header-link {
-				color: #cbd5e1;
-				text-decoration: none;
-				font-size: 15px;
-				font-weight: 600;
-			}
-
-			.header-link:hover {
-				color: white;
-			}
-
+			.wordmark { font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
+			.header-link { color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 700; }
+			.header-link:hover { color: white; }
 			main {
 				flex: 1;
-				width: min(980px, calc(100% - 48px));
+				width: min(1040px, calc(100% - 48px));
 				margin: 0 auto;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 70px 0 110px;
+				display: grid;
+				place-items: center;
+				padding: 64px 0 90px;
 			}
-
-			.hero {
-				width: 100%;
-				text-align: center;
-			}
-
+			.hero { width: 100%; text-align: center; }
 			.badge {
 				display: inline-flex;
 				align-items: center;
-				gap: 8px;
-				padding: 8px 14px;
-				border: 1px solid rgba(255,255,255,.14);
+				gap: 9px;
+				padding: 9px 14px;
+				border: 1px solid rgba(255,255,255,.13);
 				border-radius: 999px;
-				background: rgba(255,255,255,.06);
+				background: rgba(255,255,255,.055);
 				color: #cbd5e1;
-				font-size: 14px;
-				font-weight: 600;
-				margin-bottom: 30px;
+				font-size: 13px;
+				font-weight: 750;
+				letter-spacing: .02em;
+				margin-bottom: 32px;
+				backdrop-filter: blur(12px);
 			}
-
-			.dot {
-				width: 8px;
-				height: 8px;
-				border-radius: 50%;
-				background: #22c55e;
-				box-shadow: 0 0 14px rgba(34,197,94,.8);
-			}
-
+			.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 18px rgba(var(--glow), .9); }
 			h1 {
 				margin: 0;
-				font-size: clamp(54px, 9vw, 104px);
-				line-height: .95;
-				letter-spacing: -0.07em;
-				font-weight: 850;
-			}
-
-			.gradient {
-				background: linear-gradient(90deg, #ffffff, #93c5fd);
+				font-size: clamp(42px, 8.2vw, 92px);
+				line-height: .98;
+				letter-spacing: -.065em;
+				font-weight: 880;
+				overflow-wrap: anywhere;
+				background: linear-gradient(110deg, #fff 18%, var(--accent) 62%, var(--accent2));
 				-webkit-background-clip: text;
 				background-clip: text;
 				color: transparent;
 			}
-
-			.subtitle {
-				max-width: 700px;
-				margin: 30px auto 0;
-				font-size: clamp(19px, 2.3vw, 25px);
-				line-height: 1.55;
-				color: #cbd5e1;
-			}
-
-			.actions {
-				display: flex;
-				justify-content: center;
-				gap: 14px;
-				flex-wrap: wrap;
-				margin-top: 38px;
-			}
-
+			.subtitle { max-width: 760px; margin: 28px auto 0; color: #b7c1d1; font-size: clamp(18px, 2vw, 23px); line-height: 1.58; }
+			.actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 38px; }
 			.button {
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				min-width: 175px;
-				padding: 15px 24px;
+				min-width: 178px;
+				padding: 15px 23px;
 				border-radius: 12px;
 				text-decoration: none;
-				font-weight: 750;
-				font-size: 16px;
-				transition: transform .15s ease, opacity .15s ease;
+				font-weight: 800;
+				font-size: 15px;
+				transition: transform .16s ease, box-shadow .16s ease;
 			}
-
-			.button:hover {
-				transform: translateY(-2px);
-			}
-
-			.primary {
-				background: #ffffff;
-				color: #0f172a;
-			}
-
-			.secondary {
-				border: 1px solid rgba(255,255,255,.18);
-				background: rgba(255,255,255,.06);
-				color: white;
-			}
-
-			.features {
-				margin: 75px auto 0;
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 16px;
-				max-width: 880px;
-			}
-
-			.card {
-				text-align: left;
-				padding: 24px;
-				border: 1px solid rgba(255,255,255,.1);
-				border-radius: 18px;
-				background: rgba(255,255,255,.045);
+			.button:hover { transform: translateY(-2px); }
+			.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #07111d; box-shadow: 0 14px 38px rgba(var(--glow), .18); }
+			.secondary { border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.055); color: white; }
+			.uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 860px; margin: 68px auto 0; }
+			.use {
+				padding: 22px 18px;
+				border: 1px solid rgba(255,255,255,.09);
+				border-radius: 16px;
+				background: rgba(255,255,255,.035);
+				color: #d7deea;
+				font-size: 15px;
+				font-weight: 730;
 				backdrop-filter: blur(10px);
 			}
-
-			.card-title {
-				font-weight: 750;
-				font-size: 17px;
-				margin-bottom: 8px;
-			}
-
-			.card-text {
-				margin: 0;
-				color: #94a3b8;
-				line-height: 1.55;
-				font-size: 14px;
-			}
-
-			.contact {
-				margin: 72px auto 0;
-				padding-top: 38px;
-				border-top: 1px solid rgba(255,255,255,.1);
-				max-width: 680px;
-			}
-
-			.contact h2 {
-				margin: 0 0 12px;
-				font-size: 26px;
-				letter-spacing: -0.03em;
-			}
-
-			.contact p {
-				margin: 0;
-				color: #94a3b8;
-				line-height: 1.6;
-			}
-
-			.email {
-				display: inline-block;
-				margin-top: 18px;
-				color: #bfdbfe;
-				text-decoration: none;
-				font-weight: 650;
-			}
-
-			.email:hover {
-				color: white;
-			}
-
-			.contact-options {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 12px 22px;
-				flex-wrap: wrap;
-				margin-top: 18px;
-			}
-
-			.contact-options .email {
-				margin-top: 0;
-			}
-
-			.phone {
-				color: #bfdbfe;
-				text-decoration: none;
-				font-weight: 650;
-			}
-
-			.phone:hover {
-				color: white;
-			}
-
+			.contact { max-width: 760px; margin: 62px auto 0; padding: 38px 28px 0; border-top: 1px solid rgba(255,255,255,.09); }
+			.contact h2 { margin: 0 0 11px; font-size: 25px; letter-spacing: -.03em; }
+			.contact p { margin: 0; color: #8f9bad; line-height: 1.65; font-size: 15px; }
+			.contact-options { display: flex; align-items: center; justify-content: center; gap: 10px 22px; flex-wrap: wrap; margin-top: 18px; }
+			.contact-options a { color: var(--accent); text-decoration: none; font-weight: 760; }
+			.contact-options a:hover { color: white; }
+			.notice { max-width: 740px; margin: 28px auto 0; color: #697588; font-size: 12px; line-height: 1.55; }
 			footer {
 				width: min(1120px, calc(100% - 48px));
 				margin: 0 auto;
 				padding: 28px 0 34px;
 				display: flex;
 				justify-content: space-between;
-				gap: 20px;
+				gap: 18px;
 				flex-wrap: wrap;
-				color: #64748b;
-				font-size: 13px;
-				border-top: 1px solid rgba(255,255,255,.07);
+				color: #566276;
+				font-size: 12px;
+				border-top: 1px solid rgba(255,255,255,.06);
 			}
-
-			@media (max-width: 760px) {
-				header {
-					width: min(100% - 32px, 1120px);
-				}
-
-				main {
-					width: min(100% - 32px, 980px);
-					padding-top: 50px;
-				}
-
-				.features {
-					grid-template-columns: 1fr;
-				}
-
-				.card {
-					text-align: center;
-				}
-
-				footer {
-					width: min(100% - 32px, 1120px);
-					flex-direction: column;
-					text-align: center;
-				}
+			@media (max-width: 700px) {
+				header, footer { width: min(100% - 32px, 1120px); }
+				main { width: min(100% - 32px, 1040px); padding-top: 46px; }
+				.uses { grid-template-columns: 1fr; }
+				.contact { padding-inline: 0; }
+				footer { flex-direction: column; text-align: center; }
 			}
 		</style>
 	</head>
-
 	<body>
 		<div class="page">
 			<header>
-				<div class="logo">{domain}</div>
-
-				<a
-					class="header-link"
-					href={`mailto:${email}?subject=${subject}`}
-				>
-					Contact Owner
-				</a>
+				<div class="wordmark">{site.domain}</div>
+				<a class="header-link" href={`mailto:${email}?subject=${subject}`}>Contact Owner</a>
 			</header>
-
 			<main>
 				<section class="hero">
-					<div class="badge">
-						<span class="dot"></span>
-						Available for acquisition
-					</div>
-
-					<h1 class="gradient">{domain}</h1>
-
-					<p class="subtitle">
-						A premium, memorable .com domain for a smarter business.
-						Ideal for administrative services, business software,
-						B2B marketplaces, procurement, professional services,
-						or business deals and discounts.
-					</p>
-
+					<div class="badge"><span class="dot"></span>Available for acquisition</div>
+					<h1>{site.domain}</h1>
+					<p class="subtitle">{site.description}</p>
 					<div class="actions">
-						<a
-							class="button primary"
-							href={`mailto:${email}?subject=${subject}`}
-						>
-							Make an Offer
-						</a>
-
-						<a class="button secondary" href="#contact">
-							Contact for Details
-						</a>
+						<a class="button primary" href={`mailto:${email}?subject=${subject}`}>Make an Inquiry</a>
+						<a class="button secondary" href={`tel:${phoneHref}`}>Call Owner</a>
 					</div>
-
-					<div class="features">
-						<div class="card">
-							<div class="card-title">Memorable</div>
-							<p class="card-text">
-								Short, clear, easy to spell, and easy for customers to remember.
-							</p>
-						</div>
-
-						<div class="card">
-							<div class="card-title">Commercial</div>
-							<p class="card-text">
-								A natural fit for business services, software, marketplaces, and B2B brands.
-							</p>
-						</div>
-
-						<div class="card">
-							<div class="card-title">Versatile</div>
-							<p class="card-text">
-								Broad enough to support multiple business models as a company grows.
-							</p>
-						</div>
+					<div class="uses">
+						{site.uses.map((use) => <div class="use">{use}</div>)}
 					</div>
-
-					<div class="contact" id="contact">
-						<h2>Interested in acquiring {domain}?</h2>
-
-						<p>
-							For more information or to discuss purchasing this website and domain,
-							contact the owner by email or telephone.
-						</p>
-
+					<div class="contact">
+						<h2>Interested in {site.domain}?</h2>
+						<p>Contact the owner directly for additional information or to discuss acquiring this domain.</p>
 						<div class="contact-options">
-							<a
-								class="email"
-								href={`mailto:${email}?subject=${subject}`}
-							>
-								{email}
-							</a>
-
-							<a class="phone" href={`tel:${phoneHref}`}>
-								{phoneDisplay}
-							</a>
+							<a href={`mailto:${email}?subject=${subject}`}>{email}</a>
+							<a href={`tel:${phoneHref}`}>{phoneDisplay}</a>
 						</div>
 					</div>
+					{site.category === "health" && <p class="notice">This website does not provide medical advice, prescriptions, products, or healthcare services. Any future use must comply with all applicable licensing, advertising, and healthcare laws.</p>}
+					{site.personal && <p class="notice">This independently owned website is not affiliated with, authorized by, or endorsed by any person or organization that may share this name.</p>}
 				</section>
 			</main>
-
 			<footer>
-				<span>© {new Date().getFullYear()} {domain}</span>
-				<span>Premium domain available for acquisition.</span>
+				<span>© {new Date().getFullYear()} {site.domain}</span>
+				<span>Domain available for acquisition.</span>
 			</footer>
 		</div>
 	</body>
