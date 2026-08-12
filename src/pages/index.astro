@@ -1,6 +1,8 @@
 ---
 const domain = "AdminDeals.com";
-const email = "brian@milleradesman.com";
+const email = "kevinsmith741969@gmail.com";
+const phoneDisplay = "347-287-5207";
+const phoneHref = "+13472875207";
 const subject = encodeURIComponent("Offer for AdminDeals.com");
 ---
 
@@ -226,6 +228,29 @@ const subject = encodeURIComponent("Offer for AdminDeals.com");
 				color: white;
 			}
 
+			.contact-options {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 12px 22px;
+				flex-wrap: wrap;
+				margin-top: 18px;
+			}
+
+			.contact-options .email {
+				margin-top: 0;
+			}
+
+			.phone {
+				color: #bfdbfe;
+				text-decoration: none;
+				font-weight: 650;
+			}
+
+			.phone:hover {
+				color: white;
+			}
+
 			footer {
 				width: min(1120px, calc(100% - 48px));
 				margin: 0 auto;
@@ -304,7 +329,7 @@ const subject = encodeURIComponent("Offer for AdminDeals.com");
 						</a>
 
 						<a class="button secondary" href="#contact">
-							Contact Owner
+							Contact for Details
 						</a>
 					</div>
 
@@ -335,17 +360,22 @@ const subject = encodeURIComponent("Offer for AdminDeals.com");
 						<h2>Interested in acquiring {domain}?</h2>
 
 						<p>
-							Contact the domain owner directly to discuss an offer.
-							Secure transfer can be completed through an established
-							domain marketplace or escrow provider.
+							For more information or to discuss purchasing this website and domain,
+							contact the owner by email or telephone.
 						</p>
 
-						<a
-							class="email"
-							href={`mailto:${email}?subject=${subject}`}
-						>
-							{email}
-						</a>
+						<div class="contact-options">
+							<a
+								class="email"
+								href={`mailto:${email}?subject=${subject}`}
+							>
+								{email}
+							</a>
+
+							<a class="phone" href={`tel:${phoneHref}`}>
+								{phoneDisplay}
+							</a>
+						</div>
 					</div>
 				</section>
 			</main>
